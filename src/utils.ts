@@ -1,6 +1,6 @@
 const API = '/api';
 export async function apiCall(endpoint: string, options: RequestInit = {}) {
-  const r = await fetch(\`\${API}\${endpoint}\`, { ...options, headers: { 'Content-Type': 'application/json', ...options.headers }});
+  const r = await fetch(`${API}${endpoint}`, { ...options, headers: { 'Content-Type': 'application/json', ...options.headers }});
   if (!r.ok) throw new Error((await r.json()).error || 'Failed');
   return r.json();
 }
